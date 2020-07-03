@@ -1,0 +1,12 @@
+CREATE TABLE employee 
+(
+ Employee_Id NUMBER CONSTRAINT Emp_Id primary key,
+ Employee_Name VARCHAR2(20) NOT NULL,
+ Employee_Address VARCHAR2(20) CONSTRAINT Emp_Add check ( Employee_Address <>ALL ('Newyork','London','Paris')),
+ Salary NUMBER CONSTRAINT Emp_Sal check ( salary between 20000 and 30000),
+ Company_Address varchar2(20) default 'ASV Suntech Park'
+)
+
+Insert into  employee VALUES (1,'Rudra','Patna',23000,'Bangalore')
+
+select  * from employee 

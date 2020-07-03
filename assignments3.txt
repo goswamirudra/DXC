@@ -1,0 +1,24 @@
+create table employee 
+(
+ EMPLOYEE_ID NUMBER CONSTRAINT EMP_ID primary key,
+ EMPLOYEE_NAME VARCHAR2(20) NOT NULL,
+ EMPLOYEE_ADDRESS VARCHAR2(20) CONSTRAINT EMP_ADD check ( EMPLOYEE_ADDRESS NOT IN ('Newyork','London','Paris')),
+ SALARY NUMBER CONSTRAINT EMP_SAL check ( salary between 20000 and 30000),
+ COMPANY_ADDRESS varchar2(20) default 'ASV Suntech Park'
+)
+
+ create table salary
+(
+     Employee_ID number ,
+     Employee_PF number ,
+     Employee_HRA number ,
+     CONSTRAINT FK_PID FOREIGN KEY (Employee_ID ) REFERENCES EMPLOYEE(Employee_ID ),
+     CONSTRAINT EM_PF check ( Employee_PF > 0),
+     CONSTRAINT EM_HRA check ( Employee_HRA > 0)
+)
+
+Insert into employee Values (1,'Rudra','Patna',23000,'Bangalore')
+SELECT * FROM employee
+
+insert into salary values (1,23,2300);
+select  * from Salary;
