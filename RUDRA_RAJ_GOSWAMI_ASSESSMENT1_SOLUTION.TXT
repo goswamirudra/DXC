@@ -1,0 +1,168 @@
+sample question :
+0:Write a query  to display all the bank details.
+
+Solution : select * from BANK_INFO;
+
+1.*Write a query which will display the customer id, account type they hold, their account number and bank name.
+
+Solution : SELECT CUSTOMER_ID, ACCOUNT_TYPE,                   ACCOUNT_NO, BANK_NAME 
+           FROM ACCOUNT_INFO 
+           JOIN BANK_INFO  
+           USING(IFSC_CODE)
+
+2.*Write a query which will display the customer id, account type and the account number of HDFC customers who registered after 12-JAN-2012 and before 04-APR-2012.
+
+solution:
+SELECT CUSTOMER_ID, ACCOUNT_TYPE, ACCOUNT_NO,        REGISTRATION_DATE
+FROM ACCOUNT_INFO 
+NATURAL JOIN BANK_INFO
+WHERE BANK_NAME ='HDFC'
+AND REGISTRATION_DATE 
+BETWEEN TO_DATE('12-JAN-2012','DD-MON-YYYY') AND TO_DATE('04-APR-2012','DD-MON-YYYY');
+
+3.*Write a query which will display the customer id, customer name, account no, account type and bank name where the customers hold the account.
+SOLUTION:
+ SELECT CUSTOMER_ID, CUSTOMER_NAME,ACCOUNT_NO,         ACCOUNT_TYPE, BANK_NAME
+  FROM ACCOUNT_INFO
+  NATURAL JOIN BANK_INFO 
+  JOIN CUSTOMER_PERSONAL_INFO USING       (CUSTOMER_ID) 
+
+
+4.*Write a query which will display the customer id, customer name, gender, marital status along with the unique reference string and
+ sort the records based on customer id in descending order. 
+Hint:  Generate unique reference string as mentioned below
+:
+CustomerName_Gender_MaritalStatus
+ Example 
+ C-005           KUMAR              M                 SINGLE            KUMAR_M_SINGLE
+
+Use ""UNIQUE_REF_STRING"" as alias name for displaying the unique reference string."
+SOLUTION:
+
+SOLUTION:
+SELECT CUSTOMER_ID, CUSTOMER_NAME, GENDER, MARITAL_STATUS, CUSTOMER_NAME||'_'||GENDER||'_'||MARITAL_STATUS "unique reference string"
+FROM CUSTOMER_PERSONAL_INFO
+ORDER BY CUSTOMER_ID DESC
+
+
+
+
+
+5.*Write a query which will display the account number, customer id, registration date, initial deposit amount of the customer
+ whose initial deposit amount is within the range of Rs.15000 to Rs.25000.
+
+SOLUTION:
+SELECT ACCOUNT_NO, CUSTOMER_ID,        REGISTRATION_DATE, INITIAL_DEPOSIT 
+FROM ACCOUNT_INFO
+WHERE INITIAL_DEPOSIT 
+BETWEEN 15000 AND 25000
+
+
+
+6.*Write a query which will display customer id, customer name, date of birth, guardian name of the customers whose name starts with 'J'.
+
+SOLUTION:
+SELECT CUSTOMER_ID, CUSTOMER_NAME, DATE_OF_BIRTH, GUARDIAN_NAME 
+FROM CUSTOMER_PERSONAL_INFO
+WHERE CUSTOMER_NAME
+LIKE 'J%';
+
+7.Write a query to display the customer id, customer name, date of birth, guardian name, contact number, 
+mail id, reference name who has been referenced by 'RAGHUL'.
+
+SOLUTION:
+SELECT CUSTOMER_ID,CUSTOMER_NAME, DATE_OF_BIRTH, GUARDIAN_NAME, CONTACT_NO, MAIL_ID,REFERENCE_ACC_NAME
+FROM CUSTOMER_PERSONAL_INFO 
+NATURAL JOIN CUSTOMER_REFERENCE_INFO
+WHERE REFERENCE_ACC_NAME='RAGHUL'
+
+8.*Write a query which will display the customer id, customer name, date of birth, Marital Status, Gender, Guardian name, 
+contact no and email id of the customers whose gender is male 'M' and marital status is MARRIED.
+
+SOLUTION:
+SELECT CUSTOMER_ID, CUSTOMER_NAME, DATE_OF_BIRTH, MARITAL_STATUS, GENDER, GUARDIAN_NAME, CONTACT_NO, MAIL_ID
+FROM CUSTOMER_PERSONAL_INFO
+WHERE GENDER='M' AND MARITAL_STATUS='MARRIED'
+
+
+9.*Write a query which will display the customer id, customer name, guardian name, reference account holders name of the customers 
+who are referenced / referred by their 'FRIEND'.
+
+SOLUTION:
+SELECT CUSTOMER_ID, CUSTOMER_NAME,                   GUARDIAN_NAME, REFERENCE_ACC_NAME
+FROM CUSTOMER_PERSONAL_INFO 
+JOIN CUSTOMER_REFERENCE_INFO USING(CUSTOMER_ID) 
+WHERE RELATION='FRIEND'
+
+
+10.*Write a query to display the customer id, account number and interest amount in the below format with INTEREST_AMT as alias name
+ Sort the result based on the INTEREST_AMT in ascending order.  <BR/>Example: 
+$5<BR/>Hint: Need to prefix $ to interest amount and round the result without decimals.
+
+SOLUTION:
+SELECT CUSTOMER_ID, ACCOUNT_NO, TO_CHAR(ROUND(INTEREST,0),'$9')
+AS INTEREST_AMT
+FROM ACCOUNT_INFO ORDER BY INTEREST_AMT
+
+11.*Write a query which will display the customer id, customer name, account no, account type, activation date,
+ bank name whose account will be activated on '10-APR-2012'
+
+SOLUTION:
+SELECT CUSTOMER_ID,CUSTOMER_NAME,ACCOUNT_NO, ACCOUNT_TYPE, ACTIVATION_DATE, BANK_NAME
+FROM ACCOUNT_INFO 
+NATURAL JOIN CUSTOMER_PERSONAL_INFO 
+NATURAL JOIN BANK_INFO 
+WHERE ACTIVATION_DATE= TO_DATE('10-APR-2012','FMDD-MON-YYYY')
+ 
+ 12.*Write a query which will display account number, customer id, customer name, bank name, branch name, ifsc code
+, citizenship, interest and initial deposit amount of all the customers.
+
+SOLUTION:
+SELECT ACCOUNT_NO, CUSTOMER_ID, CUSTOMER_NAME,BANK_NAME, BRANCH_NAME, IFSC_CODE, INTEREST, INITIAL_DEPOSIT, CITIZENSHIP
+FROM ACCOUNT_INFO
+NATURAL JOIN CUSTOMER_PERSONAL_INFO
+NATURAL JOIN BANK_INFO;
+
+13.*Write a query which will display customer id, customer name, date of birth, guardian name, contact number,
+ mail id and reference account holder's name of the customers who has submitted the passport as an identification document.
+
+SOLUTION:
+SELECT CUSTOMER_ID, CUSTOMER_NAME, DATE_OF_BIRTH, GUARDIAN_NAME, CONTACT_NO, MAIL_ID,REFERENCE_ACC_NAME
+FROM CUSTOMER_PERSONAL_INFO 
+NATURAL JOIN CUSTOMER_REFERENCE_INFO
+WHERE IDENTIFICATION_DOC_TYPE='PASSPORT'
+
+14.*Write a query to display the customer id, customer name, account number, account type, initial deposit, 
+interest who have deposited maximum amount in the bank.
+
+SOLUTION:
+SELECT CUSTOMER_ID,CUSTOMER_NAME, ACCOUNT_NO, ACCOUNT_TYPE, INITIAL_DEPOSIT,INTEREST
+FROM ACCOUNT_INFO
+NATURAL JOIN CUSTOMER_PERSONAL_INFO 
+WHERE INITIAL_DEPOSIT IN(SELECT MAX(INITIAL_DEPOSIT) FROM ACCOUNT_INFO)
+
+15.*Write a query to display the customer id, customer name, account number, account type, interest, bank name 
+and initial deposit amount of the customers who are getting maximum interest rate.
+
+16.Write a query to display the customer id, customer name, account no, bank name, contact no 
+and mail id of the customers who are from BANGALORE.
+
+SOLUTION:
+SELECT CUSTOMER_ID, CUSTOMER_NAME, REGISTRATION_DATE, ACCOUNT_NO, BANK_NAME,CONTACT_NO, MAIL_ID,ADDRESS
+FROM ACCOUNT_INFO 
+NATURAL JOIN BANK_INFO 
+JOIN CUSTOMER_PERSONAL_INFO USING(CUSTOMER_ID)
+WHERE ADDRESS LIKE'%BANGALORE%'
+
+
+17.Write a query which will display customer id, bank name, branch name, ifsc code, registration date, 
+activation date of the customers whose activation date is in the month of march (March 1'st to March 31'st).
+
+SOLUTION:
+SELECT CUSTOMER_ID, BANK_NAME, BRANCH_NAME,IFSC_CODE, REGISTRATION_DATE, ACTIVATION_DATE 
+FROM BANK_INFO  
+JOIN ACCOUNT_INFO 
+USING(IFSC_CODE) 
+WHERE ACTIVATION_DATE 
+BETWEEN TO_DATE('01-MARCH-2012','DD-MONTH-YYYY') AND TO_DATE('31-MARCH-2012','DD-MONTH-YYYY')
+
