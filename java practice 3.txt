@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class Kiran {
+	
+	Scanner sc=new Scanner(System.in);
+	int firstNum;
+	int secondNum;
+	int result;
+	public void display()
+	{
+		
+		System.out.print("enter ur first number ");
+		firstNum=sc.nextInt();
+		System.out.print("enter ur second number ");
+		secondNum=sc.nextInt();
+		result=firstNum+secondNum;
+		System.out.println("result is "+result);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+         Kiran k=new Kiran();
+          k.display();
+ 	}
+
+}
