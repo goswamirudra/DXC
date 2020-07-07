@@ -1,0 +1,32 @@
+
+public class Rudra {
+	public void deterite()
+	{
+		System.out.println("We are best");
+	}
+	public void dxcprint()
+	{
+		System.out.println("Dxc is work from home");
+		
+	}
+	public void display()
+	{
+		Rudra r=new Rudra();
+		r.deterite();
+		
+		
+		System.out.println("Hello");
+	}
+
+	public static void main(String[] args) {
+		
+		System.out.println("I am Rudra Raj");
+		Rudra r=new Rudra();
+		r.dxcprint();
+		r.display();
+		r.deterite();
+		System.out.println("I am working in Sathyabama");
+
+	}
+
+}
