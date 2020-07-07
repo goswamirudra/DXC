@@ -1,0 +1,31 @@
+
+public class Prime {
+  byte roll=43;
+  short salary=32;
+  int grade=9;
+  long budget=2344;
+  float marks=23.30f;
+  char alphabet='R';
+  double amount=5678.34;
+  boolean married= true;
+  String name="RUDRA";
+  public void display() {
+	  System.out.println("default value for byte:"+roll);
+	  System.out.println("default value for short:"+salary);
+	  System.out.println("default value for int:"+grade);
+	  System.out.println("default value for long:"+marks);
+	  System.out.println("default value for char:"+alphabet);
+	  System.out.println("default value for boolean:"+married);
+	  System.out.println("default value for double:"+amount);
+	  System.out.println("default value for String:"+name);
+	  System.out.println("default value for float:"+budget);
+  }
+  
+	public static void main(String[] args) {
+		Prime p = new Prime();
+		p.display();		
+		// TODO Auto-generated method stub
+
+	}
+
+}
