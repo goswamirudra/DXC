@@ -1,0 +1,52 @@
+import java.util.Scanner;
+public class Passenger {
+Scanner sc=new Scanner(System.in);
+int pnr;
+String passengerName;
+String journeyDate;
+String source;
+String destination;
+public void bookTicket()
+{
+	System.out.println("book ticket with minimum cost");
+}
+public void cancelTicket()
+{
+	System.out.println("cancel ticket with no cancellation charge");
+}
+public void displayTicketdetails()
+{
+	System.out.println("enter the Passenger pnr");
+	pnr=sc.nextInt();
+	System.out.println("enter the Passenger Name");
+	passengerName=sc.next();
+	System.out.println("enter the journeyDate details");
+	journeyDate=sc.next();
+	System.out.println("enter the source station");
+	source=sc.next();
+	System.out.println("enter the Destination station");
+	destination=sc.next();
+}
+public void display()
+{
+	System.out.println("=============ENTERED DETAILS=============");
+	System.out.println("ur Entered Passenger Pnr: "+pnr);
+	System.out.println("ur Entered passengerName: "+passengerName);
+	System.out.println(	"ur Entered journeyDetails: "+journeyDate);	
+	System.out.println("ur Entered Source station: "+source);
+	System.out.println("ur Entered Destination Station: "+destination);
+}
+
+
+	public static void main(String[] args) {
+		System.out.println("******WELCOME TO ONLINE TICKET BOOKING******");
+		Passenger p=new Passenger();
+		p.displayTicketdetails();
+		p.bookTicket();
+		p.cancelTicket();
+		p.display();
+		
+
+	}
+
+}
