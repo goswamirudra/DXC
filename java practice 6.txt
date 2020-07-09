@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+//switch demo
+public class Kirann {
+
+ int week =0;
+ Scanner sc = new Scanner(System.in);
+ public void display() {
+  System.out.print("Enter the week number (1-7 ).....");
+  week = sc.nextInt();
+  switch (week) {
+  case 1:
+   System.out.println("monday");
+   break;
+  case 2:
+   System.out.println("tuesday");
+   break;
+  case 3:
+   System.out.println("wednesday");
+   break;
+  case 4:
+   System.out.println("thursday");
+   break;
+  case 5:
+   System.out.println(" friday");
+   break;
+  case 6:
+  case 7:
+   System.out.println("Holidays");
+   break;
+  default:
+   System.out.println("Invalid week number");
+    break;
+  }
+ }
+ public static void main(String[] args) {
+  Kirann s = new Kirann();
+  s.display();
+ }
+
+}
