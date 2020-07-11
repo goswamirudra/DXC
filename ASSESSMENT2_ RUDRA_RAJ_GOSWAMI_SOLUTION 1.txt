@@ -1,0 +1,34 @@
+package pack1;
+import java.util.Scanner;
+public class CondStatement {
+	int prodNo = 0;
+	double retailPrice1 = 22.50;
+	double retailPrice2 = 44.50;
+	double retailPrice3 = 9.98;
+	int quantitySold = 0;
+	Scanner sc =new Scanner(System.in);
+	public void display() {
+		System.out.println("enter productNo to purchase: ");
+		prodNo =sc.nextInt();
+		System.out.println("enter quantity to puchase: ");
+		quantitySold =sc.nextInt();
+	    switch(prodNo) {
+	    case 1:
+	    	System.out.println("your total bill generated as: "+(retailPrice1*quantitySold));
+	    	break;
+	    case 2:
+	    	System.out.println("your total bill generated as: "+(retailPrice2*quantitySold));
+	    	break;
+	    case 3:
+	    	System.out.println("your total bill generated as: "+(retailPrice3*quantitySold));
+	    	break;
+	    default :
+	    	System.out.println("Given invalid productNo.....");
+	    }
+	}
+	public static void main(String args[]) {
+		System.out.println("*******WELCOME******* ");
+		CondStatement cs= new CondStatement();
+		cs.display();
+	}	
+}
