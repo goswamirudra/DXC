@@ -1,0 +1,134 @@
+package org.animals;
+
+public class Elephant {
+	String colour ="white";
+	float weight= (float) 4000;
+	int age = 10; 
+	public void vegetarian() {
+		
+		System.out.println("Elephant is vegetarian animals");
+	}
+	public void canClimb() {
+		System.out.println("Elephant can't climb but walk ");
+		
+	}
+	public void getSound() {
+		System.out.println("Elephant sounds loud ");
+		
+	}
+	public void elephantDetails() {
+		System.out.println("-----------The Elephant------------- ");
+		System.out.println("Elephant Colour is: "+colour);
+		System.out.println("Elephant Weight is: "+weight);
+		System.out.println("Elephant Age in Kg's is:"+age);
+	}
+	
+}
+
+
+
+
+
+package org.animals;
+
+public class Lion {
+	String colour ="white";
+	float weight= (float) 150.5;
+	int age = 10; 
+	public void vegetarian() {
+		
+		System.out.println("Lion is not a vegetarian animal");
+	}
+	public void canClimb() {
+		System.out.println("Lion can't climb");
+		
+	}
+	public void getSound() {
+		System.out.println("Lion sounds like a king");
+		
+	}
+	public void lionDetails() {
+		System.out.println("--------------THE LION KING------------- ");
+		System.out.println("Lion Colour is: "+colour);
+		System.out.println("Lion Weight in kg's is: "+weight);
+		System.out.println("Lion Age in years is: "+age);
+	}
+		
+}
+
+
+
+
+
+
+package org.animals;
+
+public class Monkey {
+	String colour = "white";
+	float weight = 50;
+	int age = 8;  
+	public void vegetarian() {
+		
+		System.out.println("Monkeys are vegetarian animals");
+	}
+	public void canClimb() {
+		System.out.println("Monkeys can climb ");
+		
+	}
+	public void getSound() {
+		System.out.println("Monkeys can sound loud ");
+		
+	}
+	public void monkeyDetails() {
+		System.out.println("----------------The Monkey-----------");
+		System.out.println("Monkey colour is: "+colour);
+		System.out.println("Monkey Weight in kg's is :"+weight);
+		System.out.println("Monkey Age is: "+age);
+	}
+		
+}
+
+
+
+
+
+
+
+
+
+
+package zoo;
+import org.animals.Lion;
+import org.animals.Elephant;
+import org.animals.Monkey;
+
+public class VandalurZoo {
+
+	public static void main(String[] args) {
+		Lion l = new Lion();
+		l.lionDetails();
+		l.vegetarian();
+		l.getSound();
+		l.canClimb();
+	   
+		Elephant e = new Elephant();
+		e.elephantDetails();
+		e.vegetarian();
+		e.canClimb();
+		e.getSound();
+		Monkey m = new Monkey();
+		m.monkeyDetails();
+		m.vegetarian();
+		m.canClimb();
+		m.getSound();
+		
+		
+	}
+
+
+}
+
+
+
+
+
