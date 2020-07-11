@@ -1,0 +1,91 @@
+package pack1;
+
+public class OverCalc {
+	
+	public void add(int num1,int num2) {
+		System.out.println(num1+num2);
+			
+	}
+	public void add(double num1,double num2 ) {
+		System.out.println(num1+num2);
+
+	}
+	public void add(int num1,double num2 ) {
+		System.out.println(num1+num2);
+
+	}
+	public void add(double num1,int num2 ) {
+		System.out.println(num1+num2);
+
+	}
+	public void diff(int num1,int num2) {
+		System.out.println(num1-num2);
+		
+	}
+	public void diff(double num1,double num2) {
+		System.out.println(num1-num2);
+	
+	}
+	public void diff(int num1,double num2) {
+		System.out.println(num1-num2);
+		
+	}
+	public void diff(double num1,int num2) {
+		System.out.println(num1-num2);
+		
+	}
+	public void mul(int num1,int num2) {
+		System.out.println(num1*num2);
+	
+	
+	}
+	public void mul(double num1,double num2) {
+		System.out.println(num1*num2);
+				
+	}	
+	public void mul(int num1,double num2) {
+		
+		System.out.println(num1*num2);
+		
+	}	
+	public void mul(double num1,int num2) {
+		
+		System.out.println(num1*num2);
+		
+	}
+	public void div(int num1,int num2) {
+	
+}
+	public void div(double num1,double num2) {
+		
+	}
+	public void div(int num1,double num2) {
+		
+	}
+	public void div(double num1,int num2) {
+		
+	}
+	public static void main(String[] args) {
+		OverCalc oc=new OverCalc();
+		oc.add(6, 4);
+		oc.add(3.3, 2.2);
+		oc.add(3, 2.2);
+		oc.add(4.0, 2);
+		oc.diff(7,3);
+		oc.diff(9.6,3.0);
+		oc.diff(9,5.0);
+		oc.diff(6.0,2);
+		oc.mul(6,7);
+		oc.mul(5.2,2.5);
+		oc.mul(10,5.0);
+		oc.mul(10.0,5);
+		oc.div(25, 50);
+		oc.div(10.0, 2.0);
+		oc.div(20, 60.0);
+		oc.div(100.0, 50);
+		
+		
+		
+	}
+	
+}
