@@ -1,0 +1,33 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+bill = prompt("enter the bill amount to be paid" )
+
+var today = new Date()
+var date = today.getDate()
+
+
+if (date > 15)
+{
+extradate = date-15
+fine = extradate * 50
+finalamount = parseInt(bill) +fine
+document.write("the total bill amount after deadline is " + finalamount )
+
+}
+
+else
+{
+
+document.write("the total bill amount on time is: " + bill )
+
+}
+</script>
+</head>
+<body>
+</body>
+</html>
