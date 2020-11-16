@@ -109,51 +109,6 @@ if($LOG_ANALYTICS_RUN) {
         $ws = $workspaces | Out-GridView -Title "Select primary workspace in DXC-Maint-RG" -OutputMode Single
         $ws
 
-        Format-Out "`t$($ws.Name)| selected for |$($CONTEXT.Subscription.Id)" -Color Magenta Yellow
-    } else {
-        Format-Out "`t$($ws.Name)| selected for |$($CONTEXT.Subscription.Id)" -Color Magenta Yellow    
-        $workspaces
-    }
-    Format-Out "Workspace information gathered`n" -Color Green
     
-    ### Script Run ###
-    Format-Out "Beginning to run |Get-LogAnalyticsData|" -Color Green Magenta
-    $stopwatch = [system.diagnostics.stopwatch]::StartNew()
-
-    Format-Out "`tGathering LogAnalytics information" -Color Yellow
-    $output = Get-LogAnalyticsData -Workspace $workspace `
-                                   -IdList $resource_info.ResourceId `
-                                   -GenerateCSVOutput
-
-    Format-Out "`tWriting output file: |$OUTPUT_DIRECTORY$OMSOUT|" -Color Yellow Magenta
-    $output | Sort-Object -Property VirtualMachine `
-            | Export-Csv -NoTypeInformation `
-                         -Delimiter ',' `
-                         -Path "$OUTPUT_DIRECTORY$OMSOUT"
-
-    $stopwatch.Stop()
-    $time = $stopwatch.Elapsed.ToString('hh\:mm\:ss')
-    Format-OutMultiple -Text @("Get-LogAnalyticsData"," script run complete - Runtime: ","$time`n") `
-                       -Color @("Magenta", "Green", "Red")
-}
-
-if($ALL_TAGGING_RUN) {
-    Format-Out "Beginning to run |Get-AzVmTags|" -Color Green Magenta
-    $stopwatch = [system.diagnostics.stopwatch]::StartNew()
-    
-    Format-Out "`tCollecting all tags" -Color Yellow
-    $output = Get-AzVmTags -IdList $resource_info.ResourceId -GenerateCSVOutput
-    
-    Format-Out "`tWriting output file: |$OUTPUT_DIRECTORY$ALLTAGOUT|" -Color Yellow Magenta
-    $output | Sort-Object -Property Name `
-            | Export-Csv -NoTypeInformation `
-                         -Delimiter ',' `
-                         -Path "$OUTPUT_DIRECTORY$ALLTAGOUT"
-    
-    $stopwatch.Stop()
-    $time = $stopwatch.Elapsed.ToString('hh\:mm\:ss')
-    Format-OutMultiple -Text @("Get-AzVmTags"," script run complete - Runtime: ","$time`n") `
-                       -Color @("Magenta", "Green", "Red")
-}
 
 
