@@ -1,0 +1,342 @@
+1 C:\Users\rgoswami22\OneDrive - DXC Production\Desktop\mainrudru.ps1       
+   2 C:\Users\rgoswami22\OneDrive - DXC Production\Desktop\mainrudru.ps1       
+   3 $vm.StorageProfile.OsDisk.OsType                                          
+   4 $info.OsType                                                              
+   5 $publicIps                                                                
+   6 clear                                                                     
+   7 C:\Users\rgoswami22\OneDrive - DXC Production\Desktop\mainrudru.ps1       
+   8 C:\Users\rgoswami22\OneDrive - DXC Production\Desktop\mainrudru.ps1       
+   9 C:\Users\rgoswami22\OneDrive - DXC Production\Desktop\mainrudru.ps1       
+  10 Get-AzVM                                                                  
+  11 Get-AzVM                                                                  
+  12 Get-AzVM | Select-Object Name                                             
+  13 Get-AzSubscription                                                        
+  14 get-AzContext                                                             
+  15 C:\Users\rgoswami22\OneDrive - DXC Production\Desktop\mainrudru.ps1       
+  16 get-AzVM                                                                  
+  17 Get-AzResourceGroup                                                       
+  18  get-AzVM                                                                 
+  19 Get-AzVM                                                                  
+  20 $subscriptionId                                                           
+  21 $vmlist                                                                   
+  22 $subscriptionId                                                           
+  23 $vms                                                                      
+  24 C:\Users\rgoswami22\OneDrive - DXC Production\Desktop\mainrudru.ps1       
+  25 $vms                                                                      
+  26 Get-AzVM                                                                  
+  27 C:\Users\rgoswami22\OneDrive - DXC Production\Desktop\mainrudru.ps1       
+  28 $disk                                                                     
+  29 $publicIps                                                                
+  30 C:\Users\rgoswami22\OneDrive - DXC Production\Desktop\mainrudru.ps1       
+  31 $publicIps                                                                
+  32 $vmname                                                                   
+  33 $vms                                                                      
+  34 subscriptionId                                                            
+  35 $subscriptionId                                                           
+  36 $disk                                                                     
+  37 C:\Users\rgoswami22\OneDrive - DXC Production\Desktop\mainrudru.ps1       
+  38 $report                                                                   
+  39 $report                                                                   
+  40 Login-AzAccount                                                           
+  41 C:\Users\rgoswami22\OneDrive - DXC Production\Desktop\mainrudru.ps1       
+  42 $vmtype                                                                   
+  43 Get-AzVM | Select-Object OsName                                           
+  44 get-AzVMDataDisk                                                          
+  45 $vms                                                                      
+  46 Get-AzureRmVM                                                             
+  47 Get-AzRmVM                                                                
+  48 $IP = (Get-AzureRmNetworkInterface -Name $VMName -ResourceGroupName $RG...
+  49 $IP = (Get-AzureRmNetworkInterface -Name $vmname -ResourceGroupName $re...
+  50 Get-AzureRmNetworkInterface                                               
+  51 Get-AzNetworkInterface                                                    
+  52 $IP = (Get-AzNetworkInterface -Name $vmname -ResourceGroupName $resourc...
+  53 Get-AzNetworkInterface -ResourceGroupName $resourcegroup                  
+  54 Get-AzNetworkInterface -ResourceGroupName $resourcegroup                  
+  55 $resourcegroup= Get-AzResourceGroup                                       
+  56 $resourcegroup                                                            
+  57 Get-AzNetworkInterface -Name $vmname                                      
+  58 $vmname                                                                   
+  59 Get-AzNetworkInterface -Name $vms                                         
+  60 Get-AzNetworkInterface -Name $vms                                         
+  61 $IP = (Get-AzNetworkInterface).IpConfigurations.PrivateIpAddress          
+  62 $IP                                                                       
+  63 $report | ft VmName, subscriptionId,  ResourceGroupName, vms, vmname, v...
+  64 $report                                                                   
+  65 C:\Users\rgoswami22\OneDrive - DXC Production\Desktop\mainrudru.ps1       
+  66 $report                                                                   
+  67 $report | ft VmName, subscriptionId,  ResourceGroupName, vms, vmname, v...
+  68 $report                                                                   
+  69 $login = Login-AzAccount...                                               
+  70 ...                                                                       
+  71 C:\Users\rgoswami22\OneDrive - DXC Production\Desktop\mainrudru.ps1       
+  72 $output                                                                   
+  73 $vms = Get-AzVM...                                                        
+  74 $vms                                                                      
+  75 $output                                                                   
+  76  $vms                                                                     
+  77 $vmname= Get-AzVM                                                         
+  78 $vmname                                                                   
+  79 $vmname= Get-AzVM | Select-Object Name                                    
+  80 $vmname                                                                   
+  81 "vmname" =$_.Name                                                         
+  82 $login = Login-AzAccount...                                               
+  83 $login = Login-AzAccount...                                               
+  84 "vmid" =$_.Id                                                             
+  85 $vms                                                                      
+  86 $vmid= Get-AzSubscription                                                 
+  87 $vmid                                                                     
+  88 $vms = Get-AzVM                                                           
+  89 $vms                                                                      
+  90 $publicIps = Get-AzPublicIpAddress                                        
+  91 $publicIps                                                                
+  92 Select IpAddress                                                          
+  93 $publicIps = Get-AzPublicIpAddress | Select IpAddress                     
+  94 $IP = (Get-AzNetworkInterface).IpConfigurations.PrivateIpAddress.Public...
+  95 $IP                                                                       
+  96 $IP = (Get-AzNetworkInterface).IpConfigurations.PrivateIpAddress          
+  97 $IP                                                                       
+  98 $report = @()...                                                          
+  99 ...                                                                       
+ 100 Get-AzVM                                                                  
+ 101 Get-AzVM                                                                  
+ 102 Get-AzVM | fl                                                             
+ 103 $context = Set-AzContext -SubscriptionID "8036a580-ab74-4014-b1c3-5128b...
+ 104 $context                                                                  
+ 105 $context.Subscription                                                     
+ 106 $context.Name                                                             
+ 107 Get-AzSubscription -SubscriptionId "8036a580-ab74-4014-b1c3-5128b0f464a7" 
+ 108 $subname = (Get-AzSubscription -SubscriptionId "8036a580-ab74-4014-b1c3...
+ 109 $subname                                                                  
+ 110 $subscriptionId = (Get-AzSubscription -SubscriptionId "8036a580-ab74-40...
+ 111 $vm = Get-AzVM...                                                         
+ 112 $ostype = $vms.storageprofile.osdisk.OsType                               
+ 113 $ostype                                                                   
+ 114 $ostype = $vms.storageprofile.osdisk.OsType...                            
+ 115 {...                                                                      
+ 116 $ostype                                                                   
+ 117 {...                                                                      
+ 118 foreach ($vms in $vm)...                                                  
+ 119 $vm = Get-AzVM...                                                         
+ 120 $vm = Get-AzVM... 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$login = Login-AzAccount
+
+$vms = Get-AzVM
+$publicIps = Get-AzPublicIpAddress | Select IpAddress
+$disk= Get-AzDisk
+
+$output = $vms | ForEach-Object{
+ [PSCustomObject]@{
+ "vmname" =$_.Name
+ "vmid" =$_.Id
+
+
+}}
+$output 
+
+$output | Export-Csv -Path $reportname -Force -NoTypeInformation
+
+
+
+$vmname= $vm.Name
+$vmid = $vm.VmId
+$subid= Get-AzSubscription | Select-Object Id
+$vmtype= Get-AzVM | Select-Object OsType 
+$publicIps = Get-AzPublicIpAddress | Select IpAddress
+$disk= Get-AzDisk
+$IP = (Get-AzNetworkInterface).IpConfigurations.PrivateIpAddress
+.PublicIpAddress
+
+
+
+
+$reportName = "C:\Users\rgoswami22\OneDrive - DXC Production\Desktop\RudraReport1.csv"
+
+$report = @()
+$vms = Get-AzVM
+$nics = Get-AzNetworkInterface | ?{ $_.VirtualMachine -NE $null}
+ 
+foreach($nic in $nics)
+{
+    $info = "" | Select VmName, ResourceGroupName, IpAddress
+    $vm = $vms | ? -Property Id -eq $nic.VirtualMachine.id
+    $info.VMName = $vm.Name
+    $info.ResourceGroupName = $vm.ResourceGroupName
+    $info.IpAddress = $nic.IpConfigurations.PrivateIpAddress
+    $report+=$info 
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======================================
+#{#Provide the subscription Id where the VMs reside
+$subscriptionId = "8036a580-ab74-4014-b1c3-5128b0f464a7"
+
+#Provide the name of the csv file to be exported
+$reportName = "C:\Users\rgoswami22\OneDrive - DXC Production\Desktop\RudraReport.csv"
+
+$report = @()
+$subscriptionId= Select-AzSubscription $subscriptionId
+$vmlist= get-AzContext
+$subscriptionId= Get-AzSubscription
+$resourcegroup= Get-AzResourceGroup   
+$vms = Get-AzVM
+$vmname= Get-AzVM | Select-Object Name
+$vmid= Get-AzSubscription | Select-Object Id
+$vmtype= Get-AzVM | Select-Object OsType 
+$publicIps = Get-AzPublicIpAddress | Select IpAddress
+$disk= Get-AzDisk
+$IP = (Get-AzNetworkInterface).IpConfigurations.PrivateIpAddress
+ 
+$report |  vmname #VmName, subscriptionId,  ResourceGroupName, vms, vmname, vmid, vmtype, PrivateIpAddress, OsType, PublicIPAddress, disk, IP
+$report | Export-CSV -Path $reportName}#
+
+
+
+
+
+
+
+
+
+
+
+
+=========================
+[12:11 PM] B, KARTHIGA
+$report = @()$vms = get-azurermvm$nics = get-azurermnetworkinterface | ?{ $_.VirtualMachine -NE $null}foreach($nic in $nics){
+
+[12:11 PM] B, KARTHIGA
+$info = "" | Select VmName, ResourceGroupName, HostName, IpAddress    $vm = $vms | ? -Property Id -eq $nic.VirtualMachine.id    $info.VMName = $vm.Name    $info.ResourceGroupName = $vm.ResourceGroupName    $info.IpAddress = $nic.IpConfigurations.PrivateIpAddress    $info.HostName = $vm.OSProfile.ComputerName    $report+=$info}$report
+
+
+
+
+
+
+
+$report = @()
+$vms = get-azurermvm
+$nics = get-azurermnetworkinterface | ?{ $_.VirtualMachine -NE $null}
+ 
+foreach($nic in $nics)
+{
+    $info = "" | Select VmName, ResourceGroupName, HostName, IpAddress
+    $vm = $vms | ? -Property Id -eq $nic.VirtualMachine.id
+    $info.VMName = $vm.Name
+    $info.ResourceGroupName = $vm.ResourceGroupName
+    $info.IpAddress = $nic.IpConfigurations.PrivateIpAddress
+    $info.HostName = $vm.OSProfile.ComputerName
+    $report+=$info
+}
+$report
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=====================================
+$login = Login-AzAccount
+$context = Set-AzContext -SubscriptionID "8036a580-ab74-4014-b1c3-5128b0f464a7"
+$subname = (Get-AzSubscription -SubscriptionId "8036a580-ab74-4014-b1c3-5128b0f464a7").Name
+$subscriptionId = (Get-AzSubscription -SubscriptionId "8036a580-ab74-4014-b1c3-5128b0f464a7").Id
+$vm = Get-AzVM
+foreach ($vms in $vm)
+{
+$ostype = $vms.storageprofile.osdisk.OsType
+$ostype 
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+==================================
+$login = Login-AzAccount
+
+#Provide the subscription Id where the VMs reside
+$subscriptionId = "8036a580-ab74-4014-b1c3-5128b0f464a7"
+
+#Provide the name of the csv file to be exported
+$reportName = "RudraReport.csv"
+
+$report = @()
+$subscriptionId= Select-AzSubscription $subscriptionId
+$vmlist= get-AzContext
+$subscriptionId= Get-AzSubscription
+$resourcegroup= Get-AzResourceGroup   
+$vms = Get-AzVM
+$vmname= Get-AzVM | Select-Object Name
+$vmid= Get-AzSubscription | Select-Object Id
+$vmtype= Get-AzVM | Select-Object OsType 
+$publicIps = Get-AzPublicIpAddress | Select IpAddress
+$disk= Get-AzDisk
+ 
+$report | ft VmName, ResourceGroupName, Region, VmSize, VirtualNetwork, Subnet, PrivateIpAddress, OsType, PublicIPAddress, NicName, ApplicationSecurityGroup 
+$report | Export-CSV "$home/$reportName"
